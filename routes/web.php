@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('Layout',function (){
    return view('Layout.Admin.master');
 });
+Route::get('dashboard',function (){
+   return view('admin.dashboard');
+})->name('dashboard');
