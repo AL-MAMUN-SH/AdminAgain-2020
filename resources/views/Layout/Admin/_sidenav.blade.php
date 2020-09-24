@@ -27,8 +27,8 @@
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="#">Category List</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Create a Category</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{route('category.index')}}">Category List</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{route('category.create')}}">Create a Category</a></li>
                 </ul>
             </div>
         </li>

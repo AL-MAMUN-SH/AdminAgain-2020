@@ -1,5 +1,8 @@
 @extends('Layout.Admin.master')
 @section('allconhere')
+    <div class="text-right mb-4">
+        <a class="font-weight-bold font-italic" href="{{route('dashboard')}}">Dashboard</a>/<a class="font-weight-bold font-italic" href="{{route('newuser.index')}}">User List</a>/<a class="font-weight-bold font-italic" href="{{route('newuser.create')}}">User Create</a>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-3"></div>
