@@ -1,674 +1,314 @@
 @extends('Layout.Admin.master')
-@section('toptitle')
-    <div class="tile_count">
-        <div class="col-md-2 col-sm-4  tile_stats_count">
-            <span class="count_top"><i class="fa fa-user"></i> Total Users</span>
-            <div class="count">2500</div>
-            <span class="count_bottom"><i class="green">4% </i> From last Week</span>
-        </div>
-        <div class="col-md-2 col-sm-4  tile_stats_count">
-            <span class="count_top"><i class="fa fa-clock-o"></i> Average Time</span>
-            <div class="count">123.50</div>
-            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
-        </div>
-        <div class="col-md-2 col-sm-4  tile_stats_count">
-            <span class="count_top"><i class="fa fa-user"></i> Total Males</span>
-            <div class="count green">2,500</div>
-            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-        </div>
-        <div class="col-md-2 col-sm-4  tile_stats_count">
-            <span class="count_top"><i class="fa fa-user"></i> Total Females</span>
-            <div class="count">4,567</div>
-            <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span>
-        </div>
-        <div class="col-md-2 col-sm-4  tile_stats_count">
-            <span class="count_top"><i class="fa fa-user"></i> Total Collections</span>
-            <div class="count">2,315</div>
-            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-        </div>
-        <div class="col-md-2 col-sm-4  tile_stats_count">
-            <span class="count_top"><i class="fa fa-user"></i> Total Connections</span>
-            <div class="count">7,325</div>
-            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-        </div>
-    </div>
-@endsection
-@section('topcontent')
+
+@section('allconhere')
     <div class="row">
-        <div class="col-md-12 col-sm-12 ">
-            <div class="dashboard_graph">
-
-                <div class="row x_title">
-                    <div class="col-md-6">
-                        <h3>Network Activities <small>Graph title sub-title</small></h3>
+        <div class="col-md-3 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title text-md-center text-xl-left">Sales</p>
+                    <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">34040</h3>
+                        <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                     </div>
-                    <div class="col-md-6">
-                        <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
-                            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                            <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
-                        </div>
-                    </div>
+                    <p class="mb-0 mt-2 text-danger">0.12% <span class="text-black ml-1"><small>(30 days)</small></span></p>
                 </div>
-
-                <div class="col-md-9 col-sm-9 ">
-                    <div id="chart_plot_01" class="demo-placeholder"></div>
-                </div>
-                <div class="col-md-3 col-sm-3  bg-white">
-                    <div class="x_title">
-                        <h2>Top Campaign Performance</h2>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div class="col-md-12 col-sm-12 ">
-                        <div>
-                            <p>Facebook Campaign</p>
-                            <div class="">
-                                <div class="progress progress_sm" style="width: 76%;">
-                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="80"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Twitter Campaign</p>
-                            <div class="">
-                                <div class="progress progress_sm" style="width: 76%;">
-                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-sm-12 ">
-                        <div>
-                            <p>Conventional Media</p>
-                            <div class="">
-                                <div class="progress progress_sm" style="width: 76%;">
-                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Bill boards</p>
-                            <div class="">
-                                <div class="progress progress_sm" style="width: 76%;">
-                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="clearfix"></div>
             </div>
         </div>
-
-    </div>
-@endsection
-
-@section('middlecon')
-    <div class="col-md-4 col-sm-4 ">
-        <div class="x_panel tile fixed_height_320">
-            <div class="x_title">
-                <h2>App Versions</h2>
-                <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
-                        </div>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-            </div>
-            <div class="x_content">
-                <h4>App Usage across versions</h4>
-                <div class="widget_summary">
-                    <div class="w_left w_25">
-                        <span>0.1.5.2</span>
+        <div class="col-md-3 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title text-md-center text-xl-left">Revenue</p>
+                    <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">47033</h3>
+                        <i class="ti-user icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                     </div>
-                    <div class="w_center w_55">
-                        <div class="progress">
-                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 66%;">
-                                <span class="sr-only">60% Complete</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w_right w_20">
-                        <span>123k</span>
-                    </div>
-                    <div class="clearfix"></div>
+                    <p class="mb-0 mt-2 text-danger">0.47% <span class="text-black ml-1"><small>(30 days)</small></span></p>
                 </div>
-
-                <div class="widget_summary">
-                    <div class="w_left w_25">
-                        <span>0.1.5.3</span>
-                    </div>
-                    <div class="w_center w_55">
-                        <div class="progress">
-                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-                                <span class="sr-only">60% Complete</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w_right w_20">
-                        <span>53k</span>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="widget_summary">
-                    <div class="w_left w_25">
-                        <span>0.1.5.4</span>
-                    </div>
-                    <div class="w_center w_55">
-                        <div class="progress">
-                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
-                                <span class="sr-only">60% Complete</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w_right w_20">
-                        <span>23k</span>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="widget_summary">
-                    <div class="w_left w_25">
-                        <span>0.1.5.5</span>
-                    </div>
-                    <div class="w_center w_55">
-                        <div class="progress">
-                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 5%;">
-                                <span class="sr-only">60% Complete</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w_right w_20">
-                        <span>3k</span>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="widget_summary">
-                    <div class="w_left w_25">
-                        <span>0.1.5.6</span>
-                    </div>
-                    <div class="w_center w_55">
-                        <div class="progress">
-                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
-                                <span class="sr-only">60% Complete</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w_right w_20">
-                        <span>1k</span>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-
             </div>
         </div>
-    </div>
-
-    <div class="col-md-4 col-sm-4 ">
-        <div class="x_panel tile fixed_height_320 overflow_hidden">
-            <div class="x_title">
-                <h2>Device Usage</h2>
-                <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
-                        </div>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-            </div>
-            <div class="x_content">
-                <table class="" style="width:100%">
-                    <tr>
-                        <th style="width:37%;">
-                            <p>Top 5</p>
-                        </th>
-                        <th>
-                            <div class="col-lg-7 col-md-7 col-sm-7 ">
-                                <p class="">Device</p>
-                            </div>
-                            <div class="col-lg-5 col-md-5 col-sm-5 ">
-                                <p class="">Progress</p>
-                            </div>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <canvas class="canvasDoughnut" height="140" width="140" style="margin: 15px 10px 10px 0"></canvas>
-                        </td>
-                        <td>
-                            <table class="tile_info">
-                                <tr>
-                                    <td>
-                                        <p><i class="fa fa-square blue"></i>IOS </p>
-                                    </td>
-                                    <td>30%</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p><i class="fa fa-square green"></i>Android </p>
-                                    </td>
-                                    <td>10%</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p><i class="fa fa-square purple"></i>Blackberry </p>
-                                    </td>
-                                    <td>20%</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p><i class="fa fa-square aero"></i>Symbian </p>
-                                    </td>
-                                    <td>15%</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p><i class="fa fa-square red"></i>Others </p>
-                                    </td>
-                                    <td>30%</td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
+        <div class="col-md-3 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title text-md-center text-xl-left">Downloads</p>
+                    <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">40016</h3>
+                        <i class="ti-agenda icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                    </div>
+                    <p class="mb-0 mt-2 text-success">64.00%<span class="text-black ml-1"><small>(30 days)</small></span></p>
+                </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="col-md-4 col-sm-4 ">
-        <div class="x_panel tile fixed_height_320">
-            <div class="x_title">
-                <h2>Quick Settings</h2>
-                <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
-                        </div>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-            </div>
-            <div class="x_content">
-                <div class="dashboard-widget-content">
-                    <ul class="quick-list">
-                        <li><i class="fa fa-calendar-o"></i><a href="#">Settings</a>
-                        </li>
-                        <li><i class="fa fa-bars"></i><a href="#">Subscription</a>
-                        </li>
-                        <li><i class="fa fa-bar-chart"></i><a href="#">Auto Renewal</a> </li>
-                        <li><i class="fa fa-line-chart"></i><a href="#">Achievements</a>
-                        </li>
-                        <li><i class="fa fa-bar-chart"></i><a href="#">Auto Renewal</a> </li>
-                        <li><i class="fa fa-line-chart"></i><a href="#">Achievements</a>
-                        </li>
-                        <li><i class="fa fa-area-chart"></i><a href="#">Logout</a>
-                        </li>
-                    </ul>
-
-                    <div class="sidebar-widget">
-                        <h4>Profile Completion</h4>
-                        <canvas width="150" height="80" id="chart_gauge_01" class="" style="width: 160px; height: 100px;"></canvas>
-                        <div class="goal-wrapper">
-                            <span id="gauge-text" class="gauge-value pull-left">0</span>
-                            <span class="gauge-value pull-left">%</span>
-                            <span id="goal-text" class="goal-value pull-right">100%</span>
-                        </div>
+        <div class="col-md-3 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title text-md-center text-xl-left">Returns</p>
+                    <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">61344</h3>
+                        <i class="ti-layers-alt icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                     </div>
+                    <p class="mb-0 mt-2 text-success">23.00%<span class="text-black ml-1"><small>(30 days)</small></span></p>
                 </div>
             </div>
         </div>
     </div>
-
-@endsection
-@section('footercon')
     <div class="row">
-        <div class="col-md-4 col-sm-4 ">
-            <div class="x_panel">
-                <div class="x_title">
-                    <h2>Recent Activities <small>Sessions</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Settings 1</a>
-                                <a class="dropdown-item" href="#">Settings 2</a>
-                            </div>
-                        </li>
-                        <li><a class="close-link"><i class="fa fa-close"></i></a>
-                        </li>
-                    </ul>
-                    <div class="clearfix"></div>
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title">Sales details</p>
+                    <p class="text-muted font-weight-light">Received overcame oh sensible so at an. Formed do change merely to county it. Am separate contempt domestic to to oh. On relation my so addition branched.</p>
+                    <div id="sales-legend" class="chartjs-legend mt-4 mb-2"></div>
+                    <canvas id="sales-chart"></canvas>
                 </div>
-                <div class="x_content">
-                    <div class="dashboard-widget-content">
-
-                        <ul class="list-unstyled timeline widget">
+                <div class="card border-right-0 border-left-0 border-bottom-0">
+                    <div class="d-flex justify-content-center justify-content-md-end">
+                        <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
+                            <button class="btn btn-lg btn-outline-light dropdown-toggle rounded-0 border-top-0 border-bottom-0" type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Today
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate2">
+                                <a class="dropdown-item" href="#">January - March</a>
+                                <a class="dropdown-item" href="#">March - June</a>
+                                <a class="dropdown-item" href="#">June - August</a>
+                                <a class="dropdown-item" href="#">August - November</a>
+                            </div>
+                        </div>
+                        <button class="btn btn-lg btn-outline-light text-primary rounded-0 border-0 d-none d-md-block" type="button"> View all </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card border-bottom-0">
+                <div class="card-body pb-0">
+                    <p class="card-title">Purchases</p>
+                    <p class="text-muted font-weight-light">The argument in favor of using filler text goes something like this: If you use real content in the design process, anytime you reach a review</p>
+                    <div class="d-flex flex-wrap mb-5">
+                        <div class="mr-5 mt-3">
+                            <p class="text-muted">Status</p>
+                            <h3>362</h3>
+                        </div>
+                        <div class="mr-5 mt-3">
+                            <p class="text-muted">New users</p>
+                            <h3>187</h3>
+                        </div>
+                        <div class="mr-5 mt-3">
+                            <p class="text-muted">Chats</p>
+                            <h3>524</h3>
+                        </div>
+                        <div class="mt-3">
+                            <p class="text-muted">Feedbacks</p>
+                            <h3>509</h3>
+                        </div>
+                    </div>
+                </div>
+                <canvas id="order-chart" class="w-100"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title mb-0">Top Products</p>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Product</th>
+                                <th>Sale</th>
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Jacob</td>
+                                <td>Photoshop</td>
+                                <td class="text-danger"> 28.76% <i class="ti-arrow-down"></i></td>
+                                <td><label class="badge badge-danger">Pending</label></td>
+                            </tr>
+                            <tr>
+                                <td>Messsy</td>
+                                <td>Flash</td>
+                                <td class="text-danger"> 21.06% <i class="ti-arrow-down"></i></td>
+                                <td><label class="badge badge-warning">In progress</label></td>
+                            </tr>
+                            <tr>
+                                <td>John</td>
+                                <td>Premier</td>
+                                <td class="text-danger"> 35.00% <i class="ti-arrow-down"></i></td>
+                                <td><label class="badge badge-info">Fixed</label></td>
+                            </tr>
+                            <tr>
+                                <td>Peter</td>
+                                <td>After effects</td>
+                                <td class="text-success"> 82.00% <i class="ti-arrow-up"></i></td>
+                                <td><label class="badge badge-success">Completed</label></td>
+                            </tr>
+                            <tr>
+                                <td>Dave</td>
+                                <td>53275535</td>
+                                <td class="text-success"> 98.05% <i class="ti-arrow-up"></i></td>
+                                <td><label class="badge badge-warning">In progress</label></td>
+                            </tr>
+                            <tr>
+                                <td>Messsy</td>
+                                <td>Flash</td>
+                                <td class="text-danger"> 21.06% <i class="ti-arrow-down"></i></td>
+                                <td><label class="badge badge-info">Fixed</label></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">To Do Lists</h4>
+                    <div class="list-wrapper pt-2">
+                        <ul class="d-flex flex-column-reverse todo-list todo-list-custom">
                             <li>
-                                <div class="block">
-                                    <div class="block_content">
-                                        <h2 class="title">
-                                            <a>Who Needs Sundance When You’ve Got&nbsp;Crowdfunding?</a>
-                                        </h2>
-                                        <div class="byline">
-                                            <span>13 hours ago</span> by <a>Jane Smith</a>
-                                        </div>
-                                        <p class="excerpt">Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>
-                                        </p>
-                                    </div>
+                                <div class="form-check form-check-flat">
+                                    <label class="form-check-label">
+                                        <input class="checkbox" type="checkbox">
+                                        Become A Travel Pro In One Easy Lesson
+                                    </label>
                                 </div>
+                                <i class="remove ti-trash"></i>
+                            </li>
+                            <li class="completed">
+                                <div class="form-check form-check-flat">
+                                    <label class="form-check-label">
+                                        <input class="checkbox" type="checkbox" checked>
+                                        See The Unmatched Beauty Of The Great Lakes
+                                    </label>
+                                </div>
+                                <i class="remove ti-trash"></i>
                             </li>
                             <li>
-                                <div class="block">
-                                    <div class="block_content">
-                                        <h2 class="title">
-                                            <a>Who Needs Sundance When You’ve Got&nbsp;Crowdfunding?</a>
-                                        </h2>
-                                        <div class="byline">
-                                            <span>13 hours ago</span> by <a>Jane Smith</a>
-                                        </div>
-                                        <p class="excerpt">Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>
-                                        </p>
-                                    </div>
+                                <div class="form-check form-check-flat">
+                                    <label class="form-check-label">
+                                        <input class="checkbox" type="checkbox">
+                                        Copper Canyon
+                                    </label>
                                 </div>
+                                <i class="remove ti-trash"></i>
+                            </li>
+                            <li class="completed">
+                                <div class="form-check form-check-flat">
+                                    <label class="form-check-label">
+                                        <input class="checkbox" type="checkbox" checked>
+                                        Top Things To See During A Holiday In Hong Kong
+                                    </label>
+                                </div>
+                                <i class="remove ti-trash"></i>
                             </li>
                             <li>
-                                <div class="block">
-                                    <div class="block_content">
-                                        <h2 class="title">
-                                            <a>Who Needs Sundance When You’ve Got&nbsp;Crowdfunding?</a>
-                                        </h2>
-                                        <div class="byline">
-                                            <span>13 hours ago</span> by <a>Jane Smith</a>
-                                        </div>
-                                        <p class="excerpt">Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>
-                                        </p>
-                                    </div>
+                                <div class="form-check form-check-flat">
+                                    <label class="form-check-label">
+                                        <input class="checkbox" type="checkbox">
+                                        Travelagent India
+                                    </label>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="block">
-                                    <div class="block_content">
-                                        <h2 class="title">
-                                            <a>Who Needs Sundance When You’ve Got&nbsp;Crowdfunding?</a>
-                                        </h2>
-                                        <div class="byline">
-                                            <span>13 hours ago</span> by <a>Jane Smith</a>
-                                        </div>
-                                        <p class="excerpt">Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>
-                                        </p>
-                                    </div>
-                                </div>
+                                <i class="remove ti-trash"></i>
                             </li>
                         </ul>
                     </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-md-8 col-sm-8 ">
-
-
-
-            <div class="row">
-
-                <div class="col-md-12 col-sm-12 ">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2>Visitors location <small>geo-presentation</small></h2>
-                            <ul class="nav navbar-right panel_toolbox">
-                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Settings 1</a>
-                                        <a class="dropdown-item" href="#">Settings 2</a>
-                                    </div>
-                                </li>
-                                <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                </li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content">
-                            <div class="dashboard-widget-content">
-                                <div class="col-md-4 hidden-small">
-                                    <h2 class="line_30">125.7k Views from 60 countries</h2>
-
-                                    <table class="countries_list">
-                                        <tbody>
-                                        <tr>
-                                            <td>United States</td>
-                                            <td class="fs15 fw700 text-right">33%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>France</td>
-                                            <td class="fs15 fw700 text-right">27%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Germany</td>
-                                            <td class="fs15 fw700 text-right">16%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Spain</td>
-                                            <td class="fs15 fw700 text-right">11%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Britain</td>
-                                            <td class="fs15 fw700 text-right">10%</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div id="world-map-gdp" class="col-md-8 col-sm-12 " style="height:230px;"></div>
-                            </div>
-                        </div>
+                    <div class="add-items d-flex mb-0 mt-4">
+                        <input type="text" class="form-control todo-list-input mr-2"  placeholder="Add new task">
+                        <button class="add btn btn-icon text-primary todo-list-add-btn bg-transparent"><i class="ti-location-arrow"></i></button>
                     </div>
                 </div>
-
-            </div>
-            <div class="row">
-
-
-                <!-- Start to do list -->
-                <div class="col-md-6 col-sm-6 ">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2>To Do List <small>Sample tasks</small></h2>
-                            <ul class="nav navbar-right panel_toolbox">
-                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Settings 1</a>
-                                        <a class="dropdown-item" href="#">Settings 2</a>
-                                    </div>
-                                </li>
-                                <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                </li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content">
-
-                            <div class="">
-                                <ul class="to_do">
-                                    <li>
-                                        <p>
-                                            <input type="checkbox" class="flat"> Schedule meeting with new client </p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <input type="checkbox" class="flat"> Create email address for new intern</p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <input type="checkbox" class="flat"> Have IT fix the network printer</p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <input type="checkbox" class="flat"> Copy backups to offsite location</p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <input type="checkbox" class="flat"> Food truck fixie locavors mcsweeney</p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <input type="checkbox" class="flat"> Food truck fixie locavors mcsweeney</p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <input type="checkbox" class="flat"> Create email address for new intern</p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <input type="checkbox" class="flat"> Have IT fix the network printer</p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <input type="checkbox" class="flat"> Copy backups to offsite location</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End to do list -->
-
-                <!-- start of weather widget -->
-                <div class="col-md-6 col-sm-6 ">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2>Daily active users <small>Sessions</small></h2>
-                            <ul class="nav navbar-right panel_toolbox">
-                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Settings 1</a>
-                                        <a class="dropdown-item" href="#">Settings 2</a>
-                                    </div>
-                                </li>
-                                <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                </li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="temperature"><b>Monday</b>, 07:30 AM
-                                        <span>F</span>
-                                        <span><b>C</b></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="weather-icon">
-                                        <canvas height="84" width="84" id="partly-cloudy-day"></canvas>
-                                    </div>
-                                </div>
-                                <div class="col-sm-8">
-                                    <div class="weather-text">
-                                        <h2>Texas <br><i>Partly Cloudy Day</i></h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="weather-text pull-right">
-                                    <h3 class="degrees">23</h3>
-                                </div>
-                            </div>
-
-                            <div class="clearfix"></div>
-
-                            <div class="row weather-days">
-                                <div class="col-sm-2">
-                                    <div class="daily-weather">
-                                        <h2 class="day">Mon</h2>
-                                        <h3 class="degrees">25</h3>
-                                        <canvas id="clear-day" width="32" height="32"></canvas>
-                                        <h5>15 <i>km/h</i></h5>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2">
-                                    <div class="daily-weather">
-                                        <h2 class="day">Tue</h2>
-                                        <h3 class="degrees">25</h3>
-                                        <canvas height="32" width="32" id="rain"></canvas>
-                                        <h5>12 <i>km/h</i></h5>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2">
-                                    <div class="daily-weather">
-                                        <h2 class="day">Wed</h2>
-                                        <h3 class="degrees">27</h3>
-                                        <canvas height="32" width="32" id="snow"></canvas>
-                                        <h5>14 <i>km/h</i></h5>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2">
-                                    <div class="daily-weather">
-                                        <h2 class="day">Thu</h2>
-                                        <h3 class="degrees">28</h3>
-                                        <canvas height="32" width="32" id="sleet"></canvas>
-                                        <h5>15 <i>km/h</i></h5>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2">
-                                    <div class="daily-weather">
-                                        <h2 class="day">Fri</h2>
-                                        <h3 class="degrees">28</h3>
-                                        <canvas height="32" width="32" id="wind"></canvas>
-                                        <h5>11 <i>km/h</i></h5>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2">
-                                    <div class="daily-weather">
-                                        <h2 class="day">Sat</h2>
-                                        <h3 class="degrees">26</h3>
-                                        <canvas height="32" width="32" id="cloudy"></canvas>
-                                        <h5>10 <i>km/h</i></h5>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- end of weather widget -->
             </div>
         </div>
     </div>
-@endsection
+    <div class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card position-relative">
+                <div class="card-body">
+                    <p class="card-title">Detailed Reports</p>
+                    <div class="row">
+                        <div class="col-md-12 col-xl-3 d-flex flex-column justify-content-center">
+                            <div class="ml-xl-4">
+                                <h1>33500</h1>
+                                <h3 class="font-weight-light mb-xl-4">Sales</h3>
+                                <p class="text-muted mb-2 mb-xl-0">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-xl-9">
+                            <div class="row">
+                                <div class="col-md-6 mt-3 col-xl-5">
+                                    <canvas id="north-america-chart"></canvas>
+                                    <div id="north-america-legend"></div>
+                                </div>
+                                <div class="col-md-6 col-xl-7">
+                                    <div class="table-responsive mb-3 mb-md-0">
+                                        <table class="table table-borderless report-table">
+                                            <tr>
+                                                <td class="text-muted">Illinois</td>
+                                                <td class="w-100 px-0">
+                                                    <div class="progress progress-md mx-4">
+                                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td><h5 class="font-weight-bold mb-0">524</h5></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-muted">Washington</td>
+                                                <td class="w-100 px-0">
+                                                    <div class="progress progress-md mx-4">
+                                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td><h5 class="font-weight-bold mb-0">722</h5></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-muted">Mississippi</td>
+                                                <td class="w-100 px-0">
+                                                    <div class="progress progress-md mx-4">
+                                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td><h5 class="font-weight-bold mb-0">173</h5></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-muted">California</td>
+                                                <td class="w-100 px-0">
+                                                    <div class="progress progress-md mx-4">
+                                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td><h5 class="font-weight-bold mb-0">945</h5></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-muted">Maryland</td>
+                                                <td class="w-100 px-0">
+                                                    <div class="progress progress-md mx-4">
+                                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td><h5 class="font-weight-bold mb-0">553</h5></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-muted">Alaska</td>
+                                                <td class="w-100 px-0">
+                                                    <div class="progress progress-md mx-4">
+                                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td><h5 class="font-weight-bold mb-0">912</h5></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ @endsection

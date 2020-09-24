@@ -1,55 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    @include('Layout.Admin.head')
+   @include('Layout.Admin._head')
 </head>
-
-{{--HEADER--}}
-
-<body class="nav-md">
-   <!-- SIde Navbar -->
+<body>
+<div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
    @include('Layout.Admin._nav')
-   <!-- SIde Navbar END -->
-        <!-- /top navigation -->
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+       @include('Layout.Admin._sidenav')
+        <!-- partial -->
 
-        <!-- page content -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-md-12 grid-margin">
+                        @include('Layout.Admin.message')
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="font-weight-bold mb-0">RoyalUI Dashboard</h4>
+                            </div>
+                        </div>
+                        {{$title}}
 
-        <div class="right_col" role="main">
-            <!-- top tiles -->
-            <div class="row" style="display: inline-block;" >
-                @yield('toptitle')
+                    </div>
+                </div>
 
+                @yield('allconhere')
             </div>
-            <!-- /top tiles -->
-              @yield('topcontent')
-
-            <br />
-
-            <div class="row">
-               @yield('middlecon')
-
-
-            </div>
-
-             @yield('footercon')
-
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+            @include('Layout.Admin._footer')
+            <!-- partial -->
         </div>
-        <!-- /page content -->
-
-        <!-- footer content -->
-        <footer>
-            <div class="text-center font-weight-bold">
-              &copy; MUNMANALL - Bootstrap Admin Template by <strong>SITEMUN</strong>
-            </div>
-            <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
+        <!-- main-panel ends -->
     </div>
+    <!-- page-body-wrapper ends -->
 </div>
+<!-- container-scroller -->
 
-<!-- jQuery -->
-
-@include('Layout.Admin._jsadd')
-
+<!-- plugins:js -->
+@include('Layout.Admin._js')
+<!-- End custom js for this page-->
 </body>
+
 </html>
+
