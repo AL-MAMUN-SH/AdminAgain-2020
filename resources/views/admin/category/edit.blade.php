@@ -16,7 +16,7 @@
                             </p>
                             <form class="forms-sample" action="{{route('category.update',$category->id)}}" method="post">
                                 @csrf
-                                @method('patch')
+                                @method('put')
                                 @include('admin.category._form')
                                 <button type="submit" class="btn btn-primary mr-2">update</button>
                                 <button class="btn btn-light">Cancel</button>

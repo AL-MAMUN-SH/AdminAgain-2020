@@ -36,7 +36,7 @@
                             <td>{{$category->status}}</td>
                             <td>{{$category->created_at->diffForHumans()}}</td>
                             <td>
-                                <a href="{{route('category.edit',$category->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="{{route('category.edit',Crypt::encryptString($category->id))}}" class="btn btn-primary btn-sm">Edit</a>
                                 <form class="d-inline-block" action="{{route('category.destroy',$category->id)}}" method="post">
                                     @csrf
                                     @method('delete')

@@ -64,11 +64,12 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-        $data['title']="Category Edit";
-        $data['category']=$category;
-        return view('admin.category.edit',$data);
+        $id = \Crypt::decryptString($id);
+       $category = Category::findOrFail($id);
+        $title="Category Edit";
+        return view('admin.category.edit',compact('category','title'));
     }
 
     /**

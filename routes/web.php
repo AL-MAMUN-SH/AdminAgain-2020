@@ -20,5 +20,6 @@ Route::get('dashboard',function (){
     $data['title']="Dashboard";
    return view('admin.dashboard',$data);
 })->name('dashboard');
+
 Route::resource('newuser','NewuserController');
 Route::resource('category','CategoryController');

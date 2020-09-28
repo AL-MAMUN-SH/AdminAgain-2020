@@ -40,8 +40,7 @@
                             <td>{{$newuser->phone}}</td>
                             <td>{{$newuser->created_at->diffForHumans()}}</td>
                             <td>
-                                <a href="{{route('newuser.edit',$newuser->id)}}" class="btn btn-primary btn-sm">Edit</a>
-                                <a href="{{route('newuser.show',$newuser->id)}}" class="btn btn-primary btn-sm">show</a>
+                                <a href="{{ route('newuser.edit',Crypt::encryptString($newuser->id)) }}" class="btn btn-primary btn-sm">Edit</a>
                                 <form class="d-inline-block" action="{{route('newuser.destroy',$newuser->id)}}" method="post">
                                     @csrf
                                     @method('delete')
@@ -55,7 +54,6 @@
                     </table>
                 </div>
             </div>
-
             {{$newusers->links()}}
         </div>
     </div>

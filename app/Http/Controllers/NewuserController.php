@@ -48,7 +48,7 @@ class NewuserController extends Controller
        $data=$request->all();
        $data['password']=Hash::make($data['password']);
        Newuser::create($data);
-       session()->flash('message','User Created Successfully');
+       session()->flash('message','User Create Successfully');
        return redirect()->route('newuser.index');
     }
 
@@ -69,11 +69,12 @@ class NewuserController extends Controller
      * @param  \App\Newuser  $newuser
      * @return \Illuminate\Http\Response
      */
-    public function edit(Newuser $newuser)
+    public function edit($id)
     {
-       $data['newuser']=$newuser;
-      $data['title']="Edite a User";
-      return view('admin.user.edit',$data);
+        $id= \Crypt::decryptString($id);
+        $newuser=  Newuser::findOrFail($id);
+        $title ="Edite a User";
+        return view('admin.user.edit',compact('newuser','title'));
     }
 
     /**
@@ -91,7 +92,7 @@ class NewuserController extends Controller
             'phone'=> 'required||between:11,14|unique:newusers,phone,'.$newuser->id,
         ]);
         $newuser->update($request->all());
-        session()->flash('message','User Updated Successfully');
+        session()->flash('message','User Update Successfully');
         return redirect()->route('newuser.index');
     }
 
@@ -104,7 +105,7 @@ class NewuserController extends Controller
     public function destroy(Newuser $newuser)
     {
         $newuser->delete();
-        session()->flash('error','User Delete Successfully');
+        session()->flash('error','User Deleted Successfully');
         return redirect()->route('newuser.index');
     }
 }
