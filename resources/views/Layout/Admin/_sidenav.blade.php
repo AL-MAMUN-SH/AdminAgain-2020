@@ -40,8 +40,8 @@
             </a>
             <div class="collapse" id="ui-Author">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="#">Author List</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Create a Author</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{route('author.index')}}">Author List</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{route('author.create')}}">Create a Author</a></li>
                 </ul>
             </div>
         </li>

@@ -86,7 +86,12 @@ class CategoryController extends Controller
             'status' => 'required',
         ]);
         $category->update($request->all());
-        session()->flash('message','Category Updated Successfully');
+        if ($category->getChanges()){
+            session()->flash('message','Category Updated Successfully');
+        }
+        else{
+            session()->flash('message','Category NOT Updated');
+        }
         return redirect()->route('category.index');
     }
 
