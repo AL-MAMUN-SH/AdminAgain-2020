@@ -67,7 +67,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $id = \Crypt::decryptString($id);
-       $category = Category::findOrFail($id);
+        $category = Category::findOrFail($id);
         $title="Category Edit";
         return view('admin.category.edit',compact('category','title'));
     }
