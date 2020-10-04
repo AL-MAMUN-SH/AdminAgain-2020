@@ -50,7 +50,7 @@
                            <td>{{$post->status}}</td>
                            <td>
                                <a href="{{route('post.edit',Crypt::encryptString($post->id))}}" class="btn btn-primary btn-sm">Edit</a>
-                               <a href="{{route('post.edit',Crypt::encryptString($post->id))}}" class="btn btn-info btn-sm">Show</a>
+                               <a href="{{route('post.show',Crypt::encryptString($post->id))}}" class="btn btn-info btn-sm">Show</a>
                                <form class="d-inline-block" action="{{route('post.destroy',$post->id)}}" method="post">
                                    @csrf
                                    @method('delete')

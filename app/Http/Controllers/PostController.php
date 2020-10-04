@@ -74,9 +74,12 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($id)
     {
-        //
+        $id=\Crypt::decryptString($id);
+        $post = Post::with('category','author')->findOrFail($id);
+        $title="Post View";
+        return view('admin.post.show',compact('post','title'));
     }
 
     /**
