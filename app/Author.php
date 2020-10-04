@@ -13,5 +13,6 @@ class Author extends Model
      'address',
      'image',
      'total_post',
+       'status',
    ];
 }

@@ -24,3 +24,4 @@ Route::get('dashboard',function (){
 Route::resource('newuser','NewuserController')->except('show');
 Route::resource('category','CategoryController')->except('show');
 Route::resource('author','AuthorController');
+Route::resource('post','PostController');

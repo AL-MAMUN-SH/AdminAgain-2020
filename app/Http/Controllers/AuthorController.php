@@ -14,7 +14,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        $data['authors']=Author::paginate(3);
+        $data['authors']=Author::paginate(5);
         $data['title']="All AUthor Here";
         return view('admin.author.index',$data);
     }
@@ -39,18 +39,18 @@ class AuthorController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-           'name' => 'required',
-           'email' => 'required|email|unique:authors',
-           'phone' => 'required|between:11,14|unique:authors',
-           'address' => 'required',
-            'image' => 'mimes:jpeg,jpg,png|max:10000',
+            'name'=> 'required',
+            'email'=> 'required|email|unique:authors',
+            'phone'=> 'required|max:15|unique:authors',
+            'status'=> 'required',
+            'image' => ' mimes:jpeg,jpg,png|max:10000',
         ]);
-        $data = $request->all();
+        $data=$request->all();
         if ($request->image){
-            $data['image']=$this->fileupload($request->image);
+            $data['image'] = $this->fileupload($request->image);
         }
         Author::create($data);
-        session()->flash('message','Author created Successfully');
+        session()->flash('message','Authors Created Successfully');
         return redirect()->route('author.index');
     }
 
@@ -84,8 +84,8 @@ class AuthorController extends Controller
     public function edit($id)
     {
         $id=\Crypt::decryptString($id);
-        $author=Author::findOrFail($id);
-        $title="Edit Author";
+        $author = Author::findOrFail($id);
+        $title = "Edit Author";
         return view('admin.author.edit',compact('author','title'));
     }
 
@@ -104,6 +104,7 @@ class AuthorController extends Controller
           'phone' =>'required|between:11,14|unique:authors,phone,'.$author->id,
           'address' =>'required',
            'image' => 'mimes:jpeg,jpg,png|max:10000',
+           'status'=>'required',
        ]);
        $data=$request->all();
        if ($request->image){

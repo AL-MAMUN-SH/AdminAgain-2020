@@ -21,7 +21,7 @@ class CreateAuthorsTable extends Migration
             $table->text('address');
             $table->text('image');
             $table->integer('total_post')->default(0);
-            $table->enum('status',['Active','Inactive'])->default('Active');
+            $table->enum('status',['Active','Inactive']);
             $table->timestamps();
         });
     }

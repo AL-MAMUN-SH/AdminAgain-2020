@@ -53,8 +53,8 @@
             </a>
             <div class="collapse" id="ui-post">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="#">All Postt</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Create a Post</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{route('post.index')}}">All Postt</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{route('post.create')}}">Create a Post</a></li>
                 </ul>
             </div>
         </li>
